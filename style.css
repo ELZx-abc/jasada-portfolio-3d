@@ -1,0 +1,472 @@
+/* ==========================================================================
+   DUSK BLUE + MIDNIGHT NAVY - HIGH-OCTANE ANIMATION THEME
+   Inspired by: Dusk Blue & Midnight Navy Palette + 20 Principles of UX & Animation
+   Features: 3D Parallax Tilt, Visibly Moving Aurora Fluid Waves, Moving Border Beams,
+             Squash & Stretch Dynamics, Concentric Radii (Zero Mouse Blur Lag)
+   ========================================================================== */
+
+:root {
+  /* Dusk Blue + Midnight Navy Core Palette */
+  --bg-deep: #050814;
+  --bg-midnight: #0a1128;
+  --bg-midnight-card: rgba(13, 22, 48, 0.75);
+  --bg-midnight-card-hover: rgba(18, 32, 70, 0.88);
+  
+  --dusk-blue: #3b82f6;
+  --dusk-blue-glow: #60a5fa;
+  --dusk-blue-deep: #1d4ed8;
+  --dusk-blue-soft: rgba(59, 130, 246, 0.15);
+  
+  --midnight-indigo: #4f46e5;
+  --electric-azure: #0ea5e9;
+  --ice-highlight: #e0f2fe;
+
+  --border-dusk: rgba(59, 130, 246, 0.22);
+  --border-dusk-hover: rgba(96, 165, 250, 0.65);
+  
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --shadow-dusk-glow: 0 10px 30px -5px rgba(59, 130, 246, 0.35);
+  --shadow-card: 0 14px 40px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.08);
+  --shadow-card-hover: 0 22px 50px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(59, 130, 246, 0.35);
+}
+
+/* Base Setup */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', 'Prompt', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #050814;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  border-radius: 9999px;
+  border: 2px solid #050814;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+  box-shadow: 0 0 12px #3b82f6;
+}
+
+/* ==========================================================================
+   DYNAMIC VISIBLE ANIMATED BACKGROUND (Dusk Blue + Midnight Navy Waves)
+   Smooth 60/120fps GPU canvas - Zero mouse lag!
+   ========================================================================== */
+#aurora-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle Animated Cyber Dot Grid Layer */
+.cyber-grid-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  animation: gridShift 40s linear infinite;
+}
+
+@keyframes gridShift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+
+/* Animated Floating Particles Layer */
+.particles-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   FLOATING PILL DOCK NAVIGATION
+   ========================================================================== */
+.floating-dock {
+  background: rgba(10, 17, 40, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-dusk);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   3D TILT CARDS & SPECULAR GLARE (HIGH-PERFORMANCE RAF)
+   ========================================================================== */
+.craft-card-3d {
+  background: var(--bg-midnight-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-dusk);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.craft-card-3d:hover {
+  border-color: var(--border-dusk-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* 3D Parallax Pop-out Content */
+.parallax-content {
+  transform: translateZ(26px);
+  transform-style: preserve-3d;
+}
+.parallax-content-sub {
+  transform: translateZ(14px);
+}
+
+/* Specular Glare Overlay on 3D Tilt */
+.card-specular-glare {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(96, 165, 250, 0.05) 30%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 10;
+  border-radius: inherit;
+}
+.craft-card-3d:hover .card-specular-glare {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   ANIMATED BORDER BEAM (Travelling Glowing Edge)
+   ========================================================================== */
+.border-beam-card {
+  position: relative;
+}
+.border-beam-card::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--dusk-blue-glow) 50%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  background-size: 200% 100%;
+  animation: borderBeam 4s linear infinite;
+  z-index: 5;
+}
+@keyframes borderBeam {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================================================
+   SQUASH & STRETCH DYNAMICS (Principle #1 of Animation)
+   ========================================================================== */
+.squash-btn {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, filter 0.2s ease;
+  will-change: transform;
+}
+.squash-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+.squash-btn:active {
+  transform: scale(0.94) translateY(2px) !important;
+}
+
+/* Dusk Blue Glowing Buttons */
+.btn-dusk-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 4px 20px -2px rgba(59, 130, 246, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.7rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.btn-dusk-primary:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.8), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px) scale(1.02);
+}
+.btn-dusk-primary:active {
+  transform: scale(0.94) translateY(2px);
+}
+
+.btn-dusk-secondary {
+  background: rgba(13, 22, 48, 0.85);
+  color: #e2e8f0;
+  border: 1px solid var(--border-dusk);
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-dusk-secondary:hover {
+  border-color: var(--dusk-blue-glow);
+  color: var(--dusk-blue-glow);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+}
+.btn-dusk-secondary:active {
+  transform: scale(0.94) translateY(2px);
+}
+
+/* ==========================================================================
+   3 SQUIRCLE DOCK (From Reel 2159540624770411 - In Dusk Blue Theme)
+   ========================================================================== */
+.squircle-dock {
+  background: rgba(10, 17, 40, 0.9);
+  border: 1px solid var(--border-dusk);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.15);
+  border-radius: 9999px;
+  padding: 0.55rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.squircle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  position: relative;
+}
+.squircle-btn:hover {
+  transform: scale(1.15) translateY(-3px);
+}
+.squircle-btn:active {
+  transform: scale(0.92) translateY(2px);
+}
+
+.squircle-dusk-1 {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+.squircle-dusk-2 {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(96, 165, 250, 0.6);
+}
+.squircle-dusk-3 {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+}
+
+/* Concentric Donut Ring Icon */
+.donut-ring {
+  width: 20px;
+  height: 20px;
+  border: 3.5px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* Solid Jet Black / Midnight Explainer Badge */
+.midnight-pill-tag {
+  background: rgba(10, 17, 40, 0.95);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #ffffff;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Dusk Glow Badges */
+.badge-dusk {
+  background: var(--dusk-blue-soft);
+  color: var(--dusk-blue-glow);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.15);
+}
+
+/* ==========================================================================
+   HOLOGRAPHIC SCANNER AROUND AVATAR
+   ========================================================================= */
+.avatar-scanner-container {
+  position: relative;
+  display: inline-block;
+}
+.avatar-scanner-aura {
+  position: absolute;
+  inset: -8px;
+  border-radius: 1.75rem;
+  background: linear-gradient(135deg, #3b82f6, #4f46e5, #0ea5e9, #3b82f6);
+  filter: blur(12px);
+  opacity: 0.75;
+  animation: rotateGlow 8s linear infinite;
+  z-index: 0;
+}
+@keyframes rotateGlow {
+  0% { filter: blur(12px) hue-rotate(0deg); }
+  100% { filter: blur(12px) hue-rotate(360deg); }
+}
+
+/* Photo Gallery & Lightbox */
+.gallery-img-wrapper {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  background-color: #0d1630;
+  border: 1px solid var(--border-dusk);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.gallery-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-img-wrapper:hover {
+  transform: translateY(-4px);
+  border-color: var(--dusk-blue-glow);
+  box-shadow: 0 16px 36px rgba(59, 130, 246, 0.3);
+}
+.gallery-img-wrapper:hover img {
+  transform: scale(1.08);
+}
+
+/* Lightbox Modal Dialog */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 20, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox-box {
+  max-width: 900px;
+  width: 100%;
+  background: #0d1630;
+  border: 1px solid var(--border-dusk-hover);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.3);
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox-overlay.active .lightbox-box {
+  transform: scale(1);
+}
+
+/* Toast Notification */
+#toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.4rem;
+  background: #0d1630;
+  border: 1px solid var(--dusk-blue-glow);
+  color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(59, 130, 246, 0.4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transform: translateY(80px) scale(0.9);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+#toast-notification.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Stagger Entrance Animations */
+.stagger-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
