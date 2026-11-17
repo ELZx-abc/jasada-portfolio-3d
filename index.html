@@ -53,53 +53,53 @@
   <div class="cyber-grid-overlay"></div>
 
   <!-- =========================================================================
-       FLOATING NAVIGATION DOCK
+       FLOATING BOTTOM DOCK NAVIGATION (macOS / iOS Dynamic Island Style)
        ========================================================================= -->
-  <header class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
-    <div class="floating-dock px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 sm:gap-6 max-w-4xl w-full">
+  <aside class="fixed bottom-5 sm:bottom-6 left-0 right-0 z-50 px-3 sm:px-4 flex justify-center pointer-events-none">
+    <nav class="floating-dock pointer-events-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 sm:gap-6 max-w-5xl w-full max-w-[96vw] overflow-x-auto no-scrollbar shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.25)]">
       
       <!-- Logo / Name Badge -->
-      <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:scale-105 transition-transform">
+      <a href="#hero" class="flex items-center gap-2.5 group shrink-0 whitespace-nowrap">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:scale-105 transition-transform shrink-0">
           <div class="donut-ring !w-4 !h-4 !border-2"></div>
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-blue-400 transition-colors">
+          <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
             Jasada<span class="text-blue-400">.K</span>
           </span>
-          <span class="text-[9px] text-blue-300 font-mono tracking-widest uppercase -mt-0.5">DUSK BLUE // 2026</span>
+          <span class="text-[9px] text-blue-300 font-mono tracking-widest uppercase -mt-0.5 whitespace-nowrap">DUSK BLUE // 2026</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Items -->
-      <nav class="hidden md:flex items-center gap-1 text-xs lg:text-sm font-medium text-slate-300">
-        <a href="#hero" class="px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors">หน้าแรก</a>
-        <a href="#profile" class="px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors">ประวัติส่วนตัว</a>
-        <a href="#skills" class="px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors">ทักษะ</a>
-        <a href="#education" class="px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors">การศึกษา 4 แห่ง</a>
-        <a href="#hobbies" class="px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors">งานอดิเรก</a>
-        <a href="#activities" class="px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors">กิจกรรม</a>
-      </nav>
+      <!-- Desktop & Tablet Nav Items (Guaranteed Single Line) -->
+      <div class="hidden sm:flex items-center gap-1 sm:gap-2 text-xs lg:text-sm font-medium text-slate-300 shrink-0">
+        <a href="#hero" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">หน้าแรก</a>
+        <a href="#profile" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">ประวัติส่วนตัว</a>
+        <a href="#skills" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">ทักษะ</a>
+        <a href="#education" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">การศึกษา 4 แห่ง</a>
+        <a href="#hobbies" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">งานอดิเรก</a>
+        <a href="#activities" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">กิจกรรม</a>
+      </div>
 
       <!-- Utility Controls -->
-      <div class="flex items-center gap-2">
-        <button id="sound-toggle-btn" class="p-2 rounded-full hover:bg-blue-950/60 text-blue-300 transition-colors" title="เปิด/ปิดเอฟเฟกต์เสียง">
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="sound-toggle-btn" class="p-2 rounded-full hover:bg-blue-950/60 text-blue-300 transition-colors shrink-0" title="เปิด/ปิดเอฟเฟกต์เสียง">
           <i data-lucide="volume-2" class="w-4 h-4"></i>
         </button>
 
-        <a href="#contact" class="btn-dusk-primary !py-1.5 !px-4 text-xs font-thai shadow-sm squash-btn">
-          <span>ติดต่อ</span>
-          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        <a href="#contact" class="btn-dusk-primary !py-1.5 !px-4 text-xs font-thai shadow-sm squash-btn shrink-0 whitespace-nowrap flex items-center gap-1.5">
+          <span class="whitespace-nowrap">ติดต่อ</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 shrink-0"></i>
         </a>
       </div>
 
-    </div>
-  </header>
+    </nav>
+  </aside>
 
   <!-- =========================================================================
        HERO SECTION (High-Craft 3D Layout with Dusk Blue & Midnight Navy)
        ========================================================================= -->
-  <section id="hero" class="relative z-10 pt-32 sm:pt-40 pb-20 px-4 sm:px-8 max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-14 justify-between min-h-[92vh]">
+  <section id="hero" class="relative z-10 pt-20 sm:pt-28 pb-20 px-4 sm:px-8 max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-14 justify-between min-h-[90vh]">
     
     <!-- Hero Left: Typography & Key Identifiers -->
     <div class="flex-1 space-y-6 text-center lg:text-left stagger-in">
@@ -788,7 +788,7 @@
   <!-- =========================================================================
        SECTION 6: CONTACT & FOOTER
        ========================================================================= -->
-  <footer id="contact" class="relative z-10 py-20 px-4 sm:px-8 border-t border-blue-500/20 bg-[#070b19]/90">
+  <footer id="contact" class="relative z-10 pt-20 pb-36 sm:pb-40 px-4 sm:px-8 border-t border-blue-500/20 bg-[#070b19]/90">
     <div class="max-w-4xl mx-auto text-center space-y-8 stagger-in">
       
       <div class="midnight-pill-tag">
