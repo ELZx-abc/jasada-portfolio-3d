@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jasada Kuesakul (Bank) | Dusk Blue & Midnight Navy Edition</title>
-  <meta name="description" content="เว็บไซต์แนะนำตัว เจษฎา เกื้อสกุล (แบงค์) - ธีม Dusk Blue + Midnight Navy อนิเมชั่น 3D จัดเต็ม" />
+  <title>Jasada Kuesakul (Bank) | Ultraviolet & Cosmic Midnight Edition</title>
+  <meta name="description" content="เว็บไซต์แนะนำตัว เจษฎา เกื้อสกุล (แบงค์) - ธีม Ultraviolet & Cosmic Midnight อนิเมชั่น 3D จัดเต็ม" />
 
   <!-- Google Fonts: Plus Jakarta Sans & Prompt for Clean Thai Neo-Grotesque Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,12 +19,12 @@
       theme: {
         extend: {
           colors: {
-            midnight: '#0a1128',
-            midnightDark: '#050814',
-            duskBlue: '#3b82f6',
-            duskGlow: '#60a5fa',
-            duskDeep: '#1d4ed8',
-            electricAzure: '#0ea5e9',
+            cosmicDeep: '#0B0720',
+            royalPlum: '#25134D',
+            electricViolet: '#6A2FC8',
+            radiantLavender: '#9D71E8',
+            softLilac: '#D1B8FF',
+            iceViolet: '#F2E9FF',
           },
           fontFamily: {
             thai: ['Prompt', 'sans-serif'],
@@ -41,53 +41,57 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-[#050814] text-slate-100 min-h-screen relative selection:bg-blue-600 selection:text-white">
+<body class="bg-[#0B0720] text-[#F2E9FF] min-h-screen relative selection:bg-[#6A2FC8] selection:text-white">
 
   <!-- =========================================================================
-       DYNAMIC VISIBLY MOVING BACKGROUND (Dusk Blue + Midnight Navy Aurora Waves)
-       Moves continuously with autonomous physics - Zero Mouse Lag!
+       DYNAMIC VISIBLY MOVING BACKGROUND (Ultraviolet Waves Canvas)
+       Autonomous 60/120fps GPU canvas - Zero Mouse Lag!
        ========================================================================= -->
   <canvas id="aurora-canvas"></canvas>
 
   <!-- Animated Cyber Grid Overlay -->
   <div class="cyber-grid-overlay"></div>
 
+  <!-- Ambient Glow Flares (Matching the Palette Artwork) -->
+  <div class="flare-left"></div>
+  <div class="flare-right"></div>
+
   <!-- =========================================================================
        FLOATING BOTTOM DOCK NAVIGATION (macOS / iOS Dynamic Island Style)
        ========================================================================= -->
   <aside class="fixed bottom-5 sm:bottom-6 left-0 right-0 z-50 px-3 sm:px-4 flex justify-center pointer-events-none">
-    <nav class="floating-dock pointer-events-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 sm:gap-6 max-w-5xl w-full max-w-[96vw] overflow-x-auto no-scrollbar shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.25)]">
+    <nav class="floating-dock pointer-events-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 sm:gap-6 max-w-5xl w-full max-w-[96vw] overflow-x-auto no-scrollbar shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_35px_rgba(106,47,200,0.35)]">
       
       <!-- Logo / Name Badge -->
       <a href="#hero" class="flex items-center gap-2.5 group shrink-0 whitespace-nowrap">
-        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:scale-105 transition-transform shrink-0">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#6A2FC8] to-[#9D71E8] flex items-center justify-center text-white shadow-[0_0_16px_rgba(157,113,232,0.6)] group-hover:scale-105 transition-transform shrink-0">
           <div class="donut-ring !w-4 !h-4 !border-2"></div>
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
-            Jasada<span class="text-blue-400">.K</span>
+          <span class="font-bold text-sm sm:text-base tracking-tight text-[#F2E9FF] group-hover:text-[#D1B8FF] transition-colors whitespace-nowrap">
+            Jasada<span class="text-[#9D71E8]">.K</span>
           </span>
-          <span class="text-[9px] text-blue-300 font-mono tracking-widest uppercase -mt-0.5 whitespace-nowrap">DUSK BLUE // 2026</span>
+          <span class="text-[9px] text-[#D1B8FF] font-mono tracking-widest uppercase -mt-0.5 whitespace-nowrap">ULTRAVIOLET // 2026</span>
         </div>
       </a>
 
       <!-- Desktop & Tablet Nav Items (Guaranteed Single Line) -->
-      <div class="hidden sm:flex items-center gap-1 sm:gap-2 text-xs lg:text-sm font-medium text-slate-300 shrink-0">
-        <a href="#hero" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">หน้าแรก</a>
-        <a href="#profile" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">ประวัติส่วนตัว</a>
-        <a href="#skills" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">ทักษะ</a>
-        <a href="#education" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">การศึกษา 4 แห่ง</a>
-        <a href="#hobbies" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">งานอดิเรก</a>
-        <a href="#activities" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-blue-400 hover:bg-blue-500/10 transition-colors whitespace-nowrap">กิจกรรม</a>
+      <div class="hidden sm:flex items-center gap-1 sm:gap-2 text-xs lg:text-sm font-medium text-[#D1B8FF] shrink-0">
+        <a href="#hero" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-white hover:bg-[#6A2FC8]/25 transition-colors whitespace-nowrap">หน้าแรก</a>
+        <a href="#profile" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-white hover:bg-[#6A2FC8]/25 transition-colors whitespace-nowrap">ประวัติส่วนตัว</a>
+        <a href="#skills" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-white hover:bg-[#6A2FC8]/25 transition-colors whitespace-nowrap">ทักษะ</a>
+        <a href="#education" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-white hover:bg-[#6A2FC8]/25 transition-colors whitespace-nowrap">การศึกษา 4 แห่ง</a>
+        <a href="#hobbies" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-white hover:bg-[#6A2FC8]/25 transition-colors whitespace-nowrap">งานอดิเรก</a>
+        <a href="#activities" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-white hover:bg-[#6A2FC8]/25 transition-colors whitespace-nowrap">กิจกรรม</a>
       </div>
 
       <!-- Utility Controls -->
       <div class="flex items-center gap-2 shrink-0">
-        <button id="sound-toggle-btn" class="p-2 rounded-full hover:bg-blue-950/60 text-blue-300 transition-colors shrink-0" title="เปิด/ปิดเอฟเฟกต์เสียง">
+        <button id="sound-toggle-btn" class="p-2 rounded-full hover:bg-[#25134D] text-[#D1B8FF] transition-colors shrink-0" title="เปิด/ปิดเอฟเฟกต์เสียง">
           <i data-lucide="volume-2" class="w-4 h-4"></i>
         </button>
 
-        <a href="#contact" class="btn-dusk-primary !py-1.5 !px-4 text-xs font-thai shadow-sm squash-btn shrink-0 whitespace-nowrap flex items-center gap-1.5">
+        <a href="#contact" class="btn-violet-primary !py-1.5 !px-4 text-xs font-thai shadow-sm squash-btn shrink-0 whitespace-nowrap flex items-center gap-1.5">
           <span class="whitespace-nowrap">ติดต่อ</span>
           <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 shrink-0"></i>
         </a>
@@ -97,85 +101,85 @@
   </aside>
 
   <!-- =========================================================================
-       HERO SECTION (High-Craft 3D Layout with Dusk Blue & Midnight Navy)
+       HERO SECTION (High-Craft 3D Layout with Ultraviolet & Cosmic Midnight)
        ========================================================================= -->
   <section id="hero" class="relative z-10 pt-20 sm:pt-28 pb-20 px-4 sm:px-8 max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-14 justify-between min-h-[90vh]">
     
     <!-- Hero Left: Typography & Key Identifiers -->
     <div class="flex-1 space-y-6 text-center lg:text-left stagger-in">
       
-      <!-- Top Midnight Pill Badge -->
-      <div class="inline-flex items-center gap-2.5 midnight-pill-tag">
-        <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
-        <span class="tracking-wide">DUSK BLUE &bull; MIDNIGHT NAVY</span>
-        <span class="text-slate-600">|</span>
-        <span id="live-clock" class="text-blue-200 font-mono">12:00:00 (UTC+7)</span>
+      <!-- Top Violet Pill Badge -->
+      <div class="inline-flex items-center gap-2.5 violet-pill-tag">
+        <span class="w-2 h-2 rounded-full bg-[#9D71E8] animate-ping"></span>
+        <span class="tracking-wide">ULTRAVIOLET &bull; COSMIC MIDNIGHT</span>
+        <span class="text-[#6A2FC8]">|</span>
+        <span id="live-clock" class="text-[#D1B8FF] font-mono">12:00:00 (UTC+7)</span>
       </div>
 
       <!-- Main Headline -->
       <div class="space-y-2">
-        <p class="text-sm font-semibold tracking-wider uppercase text-blue-400 flex items-center justify-center lg:justify-start gap-2">
+        <p class="text-sm font-semibold tracking-wider uppercase text-[#9D71E8] flex items-center justify-center lg:justify-start gap-2">
           <span>✧ ยินดีต้อนรับสู่เว็บไซต์แนะนำตัว</span>
         </p>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight font-thai leading-tight text-white drop-shadow-[0_0_35px_rgba(59,130,246,0.35)]">
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight font-thai leading-tight text-[#F2E9FF] drop-shadow-[0_0_35px_rgba(157,113,232,0.4)]">
           สวัสดีครับ! ผม <br class="hidden sm:block" />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] via-[#9D71E8] to-[#6A2FC8]">
             เจษฎา เกื้อสกุล (แบงค์)
           </span>
         </h1>
       </div>
 
       <!-- Bio Subtitle (Real Data) -->
-      <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-thai font-normal leading-relaxed">
-        อายุ <strong class="text-white">18 ปี</strong> กำลังศึกษาอยู่ในระดับ 
-        <strong class="text-blue-300 font-semibold">ปวส. 1 แผนกวิชาเทคโนโลยีสารสนเทศ</strong> วิทยาลัยเทคนิคนครศรีธรรมราช 
+      <p class="text-[#D1B8FF]/90 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-thai font-normal leading-relaxed">
+        อายุ <strong class="text-[#F2E9FF]">18 ปี</strong> กำลังศึกษาอยู่ในระดับ 
+        <strong class="text-[#D1B8FF] font-semibold">ปวส. 1 แผนกวิชาเทคโนโลยีสารสนเทศ</strong> วิทยาลัยเทคนิคนครศรีธรรมราช 
         มุ่งมั่นพัฒนาทักษะด้านกราฟิกดีไซน์ งานตัดต่อ และเทคโนโลยีคอมพิวเตอร์อย่างเต็มที่
       </p>
 
-      <!-- Signature 3 Tactile Squircle Buttons (Dusk Blue Palette with Squash Dynamics) -->
+      <!-- Signature 3 Tactile Squircle Buttons (Exact Palette with Squash Dynamics) -->
       <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
         
         <div class="squircle-dock">
-          <!-- Squircle 1: Dusk Blue -->
-          <div class="squircle-btn squircle-dusk-1 squash-btn" title="ระดับการศึกษา: ปวส. 1 แผนก IT">
+          <!-- Squircle 1: Royal Plum to Electric Violet -->
+          <div class="squircle-btn squircle-color-1 squash-btn" title="ระดับการศึกษา: ปวส. 1 แผนก IT">
             <i data-lucide="terminal" class="w-5 h-5"></i>
           </div>
-          <!-- Squircle 2: Luminous Azure with Concentric White Donut Ring -->
-          <div class="squircle-btn squircle-dusk-2 squash-btn" title="อายุ 18 ปีบริบูรณ์">
+          <!-- Squircle 2: Electric Violet to Radiant Lavender with Donut Ring -->
+          <div class="squircle-btn squircle-color-2 squash-btn" title="อายุ 18 ปีบริบูรณ์">
             <div class="donut-ring"></div>
           </div>
-          <!-- Squircle 3: Electric Azure -->
-          <div class="squircle-btn squircle-dusk-3 squash-btn" title="สถานศึกษา: วท.นครศรีธรรมราช">
+          <!-- Squircle 3: Radiant Lavender to Soft Lilac -->
+          <div class="squircle-btn squircle-color-3 squash-btn" title="สถานศึกษา: วท.นครศรีธรรมราช">
             <i data-lucide="cpu" class="w-5 h-5"></i>
           </div>
         </div>
 
-        <span class="text-xs text-blue-300/80 font-thai hidden sm:inline">
+        <span class="text-xs text-[#D1B8FF]/80 font-thai hidden sm:inline">
           ← แท่นควบคุมสถานะ 3D (กดเด้งแบบ Squash & Stretch)
         </span>
       </div>
 
       <!-- Action Buttons -->
       <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-3">
-        <a href="#profile" class="btn-dusk-primary font-thai squash-btn">
+        <a href="#profile" class="btn-violet-primary font-thai squash-btn whitespace-nowrap">
           <i data-lucide="user" class="w-4 h-4"></i>
-          <span>ดูประวัติส่วนตัวทั้งหมด</span>
+          <span class="whitespace-nowrap">ดูประวัติส่วนตัวทั้งหมด</span>
         </a>
-        <a href="#activities" class="btn-dusk-secondary font-thai squash-btn">
-          <i data-lucide="sparkles" class="w-4 h-4 text-blue-400"></i>
-          <span>ดูผลงาน & กิจกรรม</span>
+        <a href="#activities" class="btn-violet-secondary font-thai squash-btn whitespace-nowrap">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#9D71E8]"></i>
+          <span class="whitespace-nowrap">ดูผลงาน & กิจกรรม</span>
         </a>
       </div>
 
       <!-- Quick Copy Phone & Email Strip -->
-      <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-mono text-slate-400">
-        <button data-copy="099-4963974" data-label="เบอร์โทรศัพท์" class="hover:text-blue-300 flex items-center gap-1.5 transition-colors group">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform"></i>
+      <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-mono text-[#B3A1D9]">
+        <button data-copy="099-4963974" data-label="เบอร์โทรศัพท์" class="hover:text-white flex items-center gap-1.5 transition-colors group">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-[#9D71E8] group-hover:scale-110 transition-transform"></i>
           <span>099-4963974 (คลิกคัดลอก)</span>
         </button>
-        <span class="text-slate-600">•</span>
-        <button data-copy="jasadakulsakul@gmail.com" data-label="อีเมล" class="hover:text-blue-300 flex items-center gap-1.5 transition-colors group">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform"></i>
+        <span class="text-[#6A2FC8]">•</span>
+        <button data-copy="jasadakulsakul@gmail.com" data-label="อีเมล" class="hover:text-white flex items-center gap-1.5 transition-colors group">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-[#9D71E8] group-hover:scale-110 transition-transform"></i>
           <span>jasadakulsakul@gmail.com</span>
         </button>
       </div>
@@ -189,12 +193,12 @@
       <div class="craft-card-3d border-beam-card w-full p-6 sm:p-7">
         
         <!-- Card Top Bar (Parallax Layer) -->
-        <div class="parallax-content flex items-center justify-between pb-4 border-b border-blue-500/20">
+        <div class="parallax-content flex items-center justify-between pb-4 border-b border-[#6A2FC8]/30">
           <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
-            <span class="text-xs font-bold text-blue-200 font-mono tracking-wider">OFFICIAL PROFILE // 01</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#9D71E8] animate-pulse"></span>
+            <span class="text-xs font-bold text-[#D1B8FF] font-mono tracking-wider">OFFICIAL PROFILE // 01</span>
           </div>
-          <span class="badge-dusk text-[11px] font-semibold">STUDENT IT</span>
+          <span class="badge-violet text-[11px] font-semibold">STUDENT IT</span>
         </div>
 
         <!-- Center: Avatar with Holographic Scanner Aura -->
@@ -205,31 +209,31 @@
             <img 
               src="img/welcome-photo.jpg" 
               alt="ภาพแนะนำตัว เจษฎา เกื้อสกุล" 
-              class="relative z-10 w-44 h-44 sm:w-48 sm:h-48 object-cover rounded-2xl shadow-[0_0_25px_rgba(59,130,246,0.4)] border-2 border-blue-400/60 transition-transform duration-300 group-hover:scale-105"
+              class="relative z-10 w-44 h-44 sm:w-48 sm:h-48 object-cover rounded-2xl shadow-[0_0_25px_rgba(106,47,200,0.5)] border-2 border-[#9D71E8]/70 transition-transform duration-300 group-hover:scale-105"
             />
-            <div class="absolute -bottom-2 -right-2 z-20 px-3 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold shadow-lg flex items-center gap-1">
+            <div class="absolute -bottom-2 -right-2 z-20 px-3 py-1 rounded-full bg-[#6A2FC8] text-white text-[11px] font-bold shadow-lg flex items-center gap-1">
               <span>🏀</span>
               <span>BANK</span>
             </div>
           </div>
 
-          <h2 class="text-2xl font-bold font-thai text-white">
+          <h2 class="text-2xl font-bold font-thai text-[#F2E9FF]">
             นายเจษฎา เกื้อสกุล
           </h2>
-          <p class="text-xs font-mono text-blue-400 font-semibold mt-1">
+          <p class="text-xs font-mono text-[#9D71E8] font-semibold mt-1">
             IT & GRAPHIC DESIGN SPECIALIST
           </p>
         </div>
 
         <!-- Bottom Stat Grid (Parallax Sub Layer) -->
-        <div class="parallax-content-sub grid grid-cols-2 gap-2.5 pt-3 border-t border-blue-500/20 text-xs font-thai">
-          <div class="p-3 rounded-xl bg-blue-950/40 border border-blue-500/30">
-            <div class="text-slate-400 text-[11px]">สถานศึกษา</div>
-            <div class="font-bold text-white mt-0.5">วท.นครศรีธรรมราช</div>
+        <div class="parallax-content-sub grid grid-cols-2 gap-2.5 pt-3 border-t border-[#6A2FC8]/30 text-xs font-thai">
+          <div class="p-3 rounded-xl bg-[#25134D]/60 border border-[#6A2FC8]/35">
+            <div class="text-[#B3A1D9] text-[11px]">สถานศึกษา</div>
+            <div class="font-bold text-[#F2E9FF] mt-0.5">วท.นครศรีธรรมราช</div>
           </div>
-          <div class="p-3 rounded-xl bg-blue-950/40 border border-blue-500/30">
-            <div class="text-slate-400 text-[11px]">ระดับชั้น</div>
-            <div class="font-bold text-blue-300 mt-0.5">ปวส. 1 (IT)</div>
+          <div class="p-3 rounded-xl bg-[#25134D]/60 border border-[#6A2FC8]/35">
+            <div class="text-[#B3A1D9] text-[11px]">ระดับชั้น</div>
+            <div class="font-bold text-[#D1B8FF] mt-0.5">ปวส. 1 (IT)</div>
           </div>
         </div>
 
@@ -246,14 +250,14 @@
     
     <!-- Section Title -->
     <div class="text-center max-w-2xl mx-auto mb-14 stagger-in">
-      <div class="midnight-pill-tag mb-3">
-        <i data-lucide="user-check" class="w-3.5 h-3.5 text-blue-400"></i>
+      <div class="violet-pill-tag mb-3">
+        <i data-lucide="user-check" class="w-3.5 h-3.5 text-[#9D71E8]"></i>
         <span>PERSONAL DOSSIER // เกี่ยวกับฉัน</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-white">
-        ข้อมูลประวัติส่วนตัว <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">& ที่พักอาศัย</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-[#F2E9FF]">
+        ข้อมูลประวัติส่วนตัว <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] to-[#9D71E8]">& ที่พักอาศัย</span>
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-2 font-thai">
+      <p class="text-[#D1B8FF]/80 text-sm sm:text-base mt-2 font-thai">
         ข้อมูลแนะนำตัวจริง พิกัดบ้านพัก และแผนที่ปักหมุดพร้อมเอฟเฟกต์ 3D Tilt เมื่อนำเมาส์ไปชี้
       </p>
     </div>
@@ -264,17 +268,17 @@
       <!-- Card 1: ข้อมูลพื้นฐาน (3D Tilt) -->
       <div class="craft-card-3d p-6 rounded-2xl stagger-in">
         <div class="parallax-content">
-          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/30">
+          <div class="w-10 h-10 rounded-xl bg-[#6A2FC8]/25 text-[#D1B8FF] flex items-center justify-center mb-4 border border-[#6A2FC8]/40">
             <i data-lucide="id-card" class="w-5 h-5"></i>
           </div>
-          <div class="text-xs font-mono text-slate-400 uppercase">ชื่อ - นามสกุล & ชื่อเล่น</div>
-          <div class="text-xl font-bold font-thai text-white mt-1">เจษฎา เกื้อสกุล</div>
-          <div class="text-sm font-thai text-blue-300 font-semibold mt-1 flex items-center gap-2">
+          <div class="text-xs font-mono text-[#B3A1D9] uppercase">ชื่อ - นามสกุล & ชื่อเล่น</div>
+          <div class="text-xl font-bold font-thai text-[#F2E9FF] mt-1">เจษฎา เกื้อสกุล</div>
+          <div class="text-sm font-thai text-[#D1B8FF] font-semibold mt-1 flex items-center gap-2">
             <span>ชื่อเล่น: <strong class="text-white text-base">แบงค์ (Bank)</strong></span>
-            <span class="badge-dusk text-[10px] py-0.5 px-2">NICKNAME</span>
+            <span class="badge-violet text-[10px] py-0.5 px-2">NICKNAME</span>
           </div>
-          <div class="mt-4 pt-4 border-t border-blue-500/20 text-xs text-slate-300 space-y-1.5 font-thai">
-            <div>• อายุ: <strong class="text-blue-300">18 ปี</strong>บริบูรณ์</div>
+          <div class="mt-4 pt-4 border-t border-[#6A2FC8]/30 text-xs text-[#D1B8FF]/90 space-y-1.5 font-thai">
+            <div>• อายุ: <strong class="text-[#F2E9FF]">18 ปี</strong>บริบูรณ์</div>
             <div>• สัญชาติ: ไทย • เชื้อชาติ: ไทย • ศาสนา: พุทธ</div>
           </div>
         </div>
@@ -283,15 +287,15 @@
       <!-- Card 2: การศึกษาปัจจุบัน (3D Tilt) -->
       <div class="craft-card-3d p-6 rounded-2xl stagger-in">
         <div class="parallax-content">
-          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/30">
+          <div class="w-10 h-10 rounded-xl bg-[#6A2FC8]/25 text-[#D1B8FF] flex items-center justify-center mb-4 border border-[#6A2FC8]/40">
             <i data-lucide="graduation-cap" class="w-5 h-5"></i>
           </div>
-          <div class="text-xs font-mono text-slate-400 uppercase">สถานศึกษา & ระดับชั้น</div>
-          <div class="text-xl font-bold font-thai text-white mt-1">วิทยาลัยเทคนิคนครศรีธรรมราช</div>
-          <div class="text-sm font-thai text-blue-300 font-semibold mt-1">
+          <div class="text-xs font-mono text-[#B3A1D9] uppercase">สถานศึกษา & ระดับชั้น</div>
+          <div class="text-xl font-bold font-thai text-[#F2E9FF] mt-1">วิทยาลัยเทคนิคนครศรีธรรมราช</div>
+          <div class="text-sm font-thai text-[#D1B8FF] font-semibold mt-1">
             ระดับชั้น: ปวส. 1 (แผนกวิชาเทคโนโลยีสารสนเทศ)
           </div>
-          <div class="mt-4 pt-4 border-t border-blue-500/20 text-xs text-slate-300 space-y-1.5 font-thai">
+          <div class="mt-4 pt-4 border-t border-[#6A2FC8]/30 text-xs text-[#D1B8FF]/90 space-y-1.5 font-thai">
             <div>• เป้าหมาย: พัฒนาทักษะด้านกราฟิกดีไซน์ & สื่อดิจิทัล</div>
             <div>• สายการเรียน: อาชีวศึกษาและเทคโนโลยีสารสนเทศ</div>
           </div>
@@ -301,18 +305,18 @@
       <!-- Card 3: การติดต่อ & เบอร์โทร (3D Tilt) -->
       <div class="craft-card-3d p-6 rounded-2xl stagger-in">
         <div class="parallax-content">
-          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/30">
+          <div class="w-10 h-10 rounded-xl bg-[#6A2FC8]/25 text-[#D1B8FF] flex items-center justify-center mb-4 border border-[#6A2FC8]/40">
             <i data-lucide="phone-call" class="w-5 h-5"></i>
           </div>
-          <div class="text-xs font-mono text-slate-400 uppercase">เบอร์โทรศัพท์ (PHONE NUMBER)</div>
-          <div class="text-2xl font-bold font-mono text-blue-300 mt-1">099-4963974</div>
-          <div class="text-xs font-mono text-slate-400 mt-1">jasadakulsakul@gmail.com</div>
+          <div class="text-xs font-mono text-[#B3A1D9] uppercase">เบอร์โทรศัพท์ (PHONE NUMBER)</div>
+          <div class="text-2xl font-bold font-mono text-[#F2E9FF] mt-1">099-4963974</div>
+          <div class="text-xs font-mono text-[#B3A1D9] mt-1">jasadakulsakul@gmail.com</div>
 
-          <div class="mt-4 pt-4 border-t border-blue-500/20 flex items-center gap-2">
-            <a href="tel:0994963974" class="btn-dusk-primary !py-1.5 !px-3 text-xs font-thai flex-1 text-center squash-btn">
+          <div class="mt-4 pt-4 border-t border-[#6A2FC8]/30 flex items-center gap-2">
+            <a href="tel:0994963974" class="btn-violet-primary !py-1.5 !px-3 text-xs font-thai flex-1 text-center squash-btn">
               <span>โทรออก</span>
             </a>
-            <button data-copy="099-4963974" data-label="เบอร์โทรศัพท์" class="btn-dusk-secondary !py-1.5 !px-3 text-xs font-thai flex-1 squash-btn">
+            <button data-copy="099-4963974" data-label="เบอร์โทรศัพท์" class="btn-violet-secondary !py-1.5 !px-3 text-xs font-thai flex-1 squash-btn">
               <span>คัดลอกเบอร์</span>
             </button>
           </div>
@@ -322,23 +326,23 @@
       <!-- Card 4: ที่อยู่บ้าน & Google Maps Interactive (3D Tilt) -->
       <div class="craft-card-3d p-6 rounded-2xl md:col-span-3 stagger-in">
         <div class="parallax-content">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-blue-500/20">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#6A2FC8]/30">
             <div>
-              <div class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">RESIDENCE LOCATION // ที่อยู่บ้าน</div>
-              <h3 class="text-lg font-bold font-thai text-white mt-0.5">
+              <div class="text-xs font-mono text-[#9D71E8] font-bold uppercase tracking-wider">RESIDENCE LOCATION // ที่อยู่บ้าน</div>
+              <h3 class="text-lg font-bold font-thai text-[#F2E9FF] mt-0.5">
                 206/1 หมู่ 4 ตำบล หินตก อำเภอ ร่อนพิบูลย์ จังหวัด นครศรีธรรมราช 83500
               </h3>
-              <div class="text-xs font-mono text-slate-400 mt-0.5">
+              <div class="text-xs font-mono text-[#B3A1D9] mt-0.5">
                 พิกัดหมุดปัก (GPS): 8.231907, 99.874652
               </div>
             </div>
 
             <div class="flex items-center gap-2">
-              <button data-copy="206/1 หมู่ 4 ตำบล หินตก อำเภอ ร่อนพิบูลย์ จังหวัด นครศรีธรรมราช 83500" data-label="ที่อยู่" class="btn-dusk-secondary !py-1.5 !px-3 text-xs font-thai squash-btn">
+              <button data-copy="206/1 หมู่ 4 ตำบล หินตก อำเภอ ร่อนพิบูลย์ จังหวัด นครศรีธรรมราช 83500" data-label="ที่อยู่" class="btn-violet-secondary !py-1.5 !px-3 text-xs font-thai squash-btn">
                 <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                 <span>คัดลอกที่อยู่</span>
               </button>
-              <a href="https://maps.google.com/?q=8.231907,99.874652" target="_blank" rel="noopener noreferrer" class="btn-dusk-primary !py-1.5 !px-3 text-xs font-thai squash-btn">
+              <a href="https://maps.google.com/?q=8.231907,99.874652" target="_blank" rel="noopener noreferrer" class="btn-violet-primary !py-1.5 !px-3 text-xs font-thai squash-btn">
                 <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
                 <span>เปิดใน Google Maps</span>
               </a>
@@ -348,18 +352,18 @@
           <!-- Maps Embed -->
           <div class="mt-4">
             <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-thai font-semibold text-blue-300 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+              <span class="text-xs font-thai font-semibold text-[#D1B8FF] flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#9D71E8] animate-ping"></span>
                 <span>แผนที่แสดงพิกัดบ้านพัก (Interactive Map)</span>
               </span>
 
-              <div class="flex items-center gap-1 bg-slate-900/80 p-1 rounded-lg text-xs font-thai border border-blue-500/20">
-                <button id="map-btn-road" class="px-2.5 py-1 rounded bg-blue-600 text-white font-medium transition-all">🗺️ แผนที่</button>
-                <button id="map-btn-sat" class="px-2.5 py-1 rounded text-slate-400 font-medium transition-all">🛰️ ดาวเทียม</button>
+              <div class="flex items-center gap-1 bg-[#120930]/90 p-1 rounded-lg text-xs font-thai border border-[#6A2FC8]/30">
+                <button id="map-btn-road" class="px-2.5 py-1 rounded bg-[#6A2FC8] text-white font-medium transition-all">🗺️ แผนที่</button>
+                <button id="map-btn-sat" class="px-2.5 py-1 rounded text-[#D1B8FF] font-medium transition-all">🛰️ ดาวเทียม</button>
               </div>
             </div>
 
-            <div class="rounded-xl overflow-hidden border border-blue-500/30 shadow-inner">
+            <div class="rounded-xl overflow-hidden border border-[#6A2FC8]/40 shadow-inner">
               <iframe
                 id="google-map-iframe"
                 src="https://maps.google.com/maps?q=8.231907,99.874652+(%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%20206%2F1%20%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%884%20%E0%B8%95.%E0%B8%AB%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%81)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -386,14 +390,14 @@
   <section id="skills" class="relative z-10 py-20 px-4 sm:px-8 max-w-6xl mx-auto">
     
     <div class="text-center max-w-2xl mx-auto mb-14 stagger-in">
-      <div class="midnight-pill-tag mb-3">
-        <i data-lucide="zap" class="w-3.5 h-3.5 text-blue-400"></i>
+      <div class="violet-pill-tag mb-3">
+        <i data-lucide="zap" class="w-3.5 h-3.5 text-[#9D71E8]"></i>
         <span>SKILLS & PROFICIENCY // สิ่งที่ทำได้</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-white">
-        ทักษะและ <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">ความสามารถ</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-[#F2E9FF]">
+        ทักษะและ <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] to-[#9D71E8]">ความสามารถ</span>
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-2 font-thai">
+      <p class="text-[#D1B8FF]/80 text-sm sm:text-base mt-2 font-thai">
         ทักษะทางด้านคอมพิวเตอร์ โปรแกรม และการสร้างสรรค์สื่อดิจิทัล
       </p>
     </div>
@@ -403,48 +407,48 @@
       <div class="craft-card-3d p-4 rounded-xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">🎨</div>
-          <div class="font-bold font-thai text-sm text-white">ออกแบบกราฟิก</div>
-          <div class="text-[11px] text-blue-300/70 font-mono mt-0.5">Graphic Design</div>
+          <div class="font-bold font-thai text-sm text-[#F2E9FF]">ออกแบบกราฟิก</div>
+          <div class="text-[11px] text-[#D1B8FF]/70 font-mono mt-0.5">Graphic Design</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">🎬</div>
-          <div class="font-bold font-thai text-sm text-white">ตัดต่อคลิป</div>
-          <div class="text-[11px] text-blue-300/70 font-mono mt-0.5">Video Editing</div>
+          <div class="font-bold font-thai text-sm text-[#F2E9FF]">ตัดต่อคลิป</div>
+          <div class="text-[11px] text-[#D1B8FF]/70 font-mono mt-0.5">Video Editing</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">📊</div>
-          <div class="font-bold font-thai text-sm text-white">ทำสไลด์นำเสนอ</div>
-          <div class="text-[11px] text-blue-300/70 font-mono mt-0.5">Presentation</div>
+          <div class="font-bold font-thai text-sm text-[#F2E9FF]">ทำสไลด์นำเสนอ</div>
+          <div class="text-[11px] text-[#D1B8FF]/70 font-mono mt-0.5">Presentation</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">📄</div>
-          <div class="font-bold font-thai text-sm text-white">MS Word</div>
-          <div class="text-[11px] text-blue-300/70 font-mono mt-0.5">Documentation</div>
+          <div class="font-bold font-thai text-sm text-[#F2E9FF]">MS Word</div>
+          <div class="text-[11px] text-[#D1B8FF]/70 font-mono mt-0.5">Documentation</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">📈</div>
-          <div class="font-bold font-thai text-sm text-white">MS Excel</div>
-          <div class="text-[11px] text-blue-300/70 font-mono mt-0.5">Spreadsheet Data</div>
+          <div class="font-bold font-thai text-sm text-[#F2E9FF]">MS Excel</div>
+          <div class="text-[11px] text-[#D1B8FF]/70 font-mono mt-0.5">Spreadsheet Data</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">💻</div>
-          <div class="font-bold font-thai text-sm text-white">ใช้งานคอมพิวเตอร์</div>
-          <div class="text-[11px] text-blue-300/70 font-mono mt-0.5">Computer Systems</div>
+          <div class="font-bold font-thai text-sm text-[#F2E9FF]">ใช้งานคอมพิวเตอร์</div>
+          <div class="text-[11px] text-[#D1B8FF]/70 font-mono mt-0.5">Computer Systems</div>
         </div>
       </div>
 
@@ -458,14 +462,14 @@
   <section id="education" class="relative z-10 py-20 px-4 sm:px-8 max-w-6xl mx-auto">
     
     <div class="text-center max-w-2xl mx-auto mb-14 stagger-in">
-      <div class="midnight-pill-tag mb-3">
-        <i data-lucide="book-open" class="w-3.5 h-3.5 text-blue-400"></i>
+      <div class="violet-pill-tag mb-3">
+        <i data-lucide="book-open" class="w-3.5 h-3.5 text-[#9D71E8]"></i>
         <span>ACADEMIC PATHWAY // เส้นทางการเรียน</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-white">
-        ประวัติการศึกษา <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">ทั้ง 4 แห่ง</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-[#F2E9FF]">
+        ประวัติการศึกษา <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] to-[#9D71E8]">ทั้ง 4 แห่ง</span>
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-2 font-thai">
+      <p class="text-[#D1B8FF]/80 text-sm sm:text-base mt-2 font-thai">
         เรียงลำดับการศึกษาจากอดีตจนถึงปัจจุบัน พร้อมตราสัญลักษณ์สถาบันและระบบ 3D Tilt
       </p>
     </div>
@@ -476,21 +480,21 @@
       <!-- Stage 1: ระดับอนุบาล -->
       <div class="craft-card-3d p-6 rounded-2xl flex items-start gap-4 stagger-in">
         <div class="parallax-content flex items-start gap-4 w-full">
-          <div class="w-16 h-16 rounded-2xl bg-slate-900/80 p-2 flex items-center justify-center shrink-0 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#120930]/80 p-2 flex items-center justify-center shrink-0 border border-[#6A2FC8]/40 shadow-[0_0_15px_rgba(106,47,200,0.2)]">
             <img src="img/schools/school-srithammarat-transparent.png" alt="ตราโรงเรียนศรีธรรมราชศึกษา" class="max-w-full max-h-full object-contain" />
           </div>
           <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-              <span class="badge-dusk text-[10px]">STAGE 01 // อนุบาล</span>
-              <span class="font-bold text-blue-200">พ.ศ. 2554 – 2557</span>
+            <div class="flex items-center justify-between text-xs font-mono text-[#B3A1D9] mb-1">
+              <span class="badge-violet text-[10px]">STAGE 01 // อนุบาล</span>
+              <span class="font-bold text-[#D1B8FF]">พ.ศ. 2554 – 2557</span>
             </div>
-            <h3 class="text-lg font-bold font-thai text-white truncate">
+            <h3 class="text-lg font-bold font-thai text-[#F2E9FF] truncate">
               โรงเรียนศรีธรรมราชศึกษา
             </h3>
-            <p class="text-xs sm:text-sm font-thai text-slate-300 mt-1">
+            <p class="text-xs sm:text-sm font-thai text-[#D1B8FF]/80 mt-1">
               ระดับชั้น: อนุบาลปีที่ 1 – 3
             </p>
-            <div class="mt-2 text-xs font-thai text-slate-400">
+            <div class="mt-2 text-xs font-thai text-[#B3A1D9]">
               เริ่มต้นการเรียนรู้และพัฒนาทักษะทางสังคมในวัยเยาว์
             </div>
           </div>
@@ -500,21 +504,21 @@
       <!-- Stage 2: ระดับประถมศึกษา -->
       <div class="craft-card-3d p-6 rounded-2xl flex items-start gap-4 stagger-in">
         <div class="parallax-content flex items-start gap-4 w-full">
-          <div class="w-16 h-16 rounded-2xl bg-slate-900/80 p-2 flex items-center justify-center shrink-0 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#120930]/80 p-2 flex items-center justify-center shrink-0 border border-[#6A2FC8]/40 shadow-[0_0_15px_rgba(106,47,200,0.2)]">
             <img src="img/schools/school-sema-transparent.png" alt="ตราโรงเรียนเทศบาลวัดเสมาเมือง" class="max-w-full max-h-full object-contain" />
           </div>
           <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-              <span class="badge-dusk text-[10px]">STAGE 02 // ประถมศึกษา</span>
-              <span class="font-bold text-blue-200">พ.ศ. 2557 – 2563</span>
+            <div class="flex items-center justify-between text-xs font-mono text-[#B3A1D9] mb-1">
+              <span class="badge-violet text-[10px]">STAGE 02 // ประถมศึกษา</span>
+              <span class="font-bold text-[#D1B8FF]">พ.ศ. 2557 – 2563</span>
             </div>
-            <h3 class="text-lg font-bold font-thai text-white truncate">
+            <h3 class="text-lg font-bold font-thai text-[#F2E9FF] truncate">
               โรงเรียนเทศบาลวัดเสมาเมือง
             </h3>
-            <p class="text-xs sm:text-sm font-thai text-slate-300 mt-1">
+            <p class="text-xs sm:text-sm font-thai text-[#D1B8FF]/80 mt-1">
               ระดับชั้น: ประถมศึกษาปีที่ 1 – 6 (ป.1 - ป.6)
             </p>
-            <div class="mt-2 text-xs font-thai text-slate-400">
+            <div class="mt-2 text-xs font-thai text-[#B3A1D9]">
               ปูพื้นฐานวิชาการ คณิตศาสตร์ วิทยาศาสตร์ และคอมพิวเตอร์
             </div>
           </div>
@@ -524,21 +528,21 @@
       <!-- Stage 3: ระดับมัธยมศึกษาตอนต้น -->
       <div class="craft-card-3d p-6 rounded-2xl flex items-start gap-4 stagger-in">
         <div class="parallax-content flex items-start gap-4 w-full">
-          <div class="w-16 h-16 rounded-2xl bg-slate-900/80 p-2 flex items-center justify-center shrink-0 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#120930]/80 p-2 flex items-center justify-center shrink-0 border border-[#6A2FC8]/40 shadow-[0_0_15px_rgba(106,47,200,0.2)]">
             <img src="img/schools/school-srithammarat-transparent.png" alt="ตราโรงเรียนศรีธรรมราชศึกษา" class="max-w-full max-h-full object-contain" />
           </div>
           <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-              <span class="badge-dusk text-[10px]">STAGE 03 // มัธยมศึกษาตอนต้น</span>
-              <span class="font-bold text-blue-200">พ.ศ. 2563 – 2566</span>
+            <div class="flex items-center justify-between text-xs font-mono text-[#B3A1D9] mb-1">
+              <span class="badge-violet text-[10px]">STAGE 03 // มัธยมศึกษาตอนต้น</span>
+              <span class="font-bold text-[#D1B8FF]">พ.ศ. 2563 – 2566</span>
             </div>
-            <h3 class="text-lg font-bold font-thai text-white truncate">
+            <h3 class="text-lg font-bold font-thai text-[#F2E9FF] truncate">
               โรงเรียนศรีธรรมราชศึกษา
             </h3>
-            <p class="text-xs sm:text-sm font-thai text-slate-300 mt-1">
+            <p class="text-xs sm:text-sm font-thai text-[#D1B8FF]/80 mt-1">
               ระดับชั้น: มัธยมศึกษาปีที่ 1 – 3 (ม.1 - ม.3)
             </p>
-            <div class="mt-2 text-xs font-thai text-slate-400">
+            <div class="mt-2 text-xs font-thai text-[#B3A1D9]">
               ร่วมกิจกรรมกีฬาสี บาสเกตบอล และค้นพบความชอบในสายคอมพิวเตอร์
             </div>
           </div>
@@ -546,23 +550,23 @@
       </div>
 
       <!-- Stage 4: สายอาชีพ ปวช. และ ปวส. (Border Beam Glowing Card) -->
-      <div class="craft-card-3d border-beam-card p-6 rounded-2xl flex items-start gap-4 border-2 !border-blue-500/60 shadow-[0_0_30px_rgba(59,130,246,0.25)] stagger-in">
+      <div class="craft-card-3d border-beam-card p-6 rounded-2xl flex items-start gap-4 border-2 !border-[#9D71E8]/70 shadow-[0_0_35px_rgba(106,47,200,0.35)] stagger-in">
         <div class="parallax-content flex items-start gap-4 w-full">
-          <div class="w-16 h-16 rounded-2xl bg-blue-900/40 p-2 flex items-center justify-center shrink-0 border border-blue-400/50 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#25134D] p-2 flex items-center justify-center shrink-0 border border-[#9D71E8]/60 shadow-[0_0_20px_rgba(157,113,232,0.35)]">
             <img src="img/schools/college-technical-transparent.png" alt="ตราวิทยาลัยเทคนิคนครศรีธรรมราช" class="max-w-full max-h-full object-contain" />
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center justify-between text-xs font-mono mb-1">
-              <span class="badge-dusk text-[10px] !bg-blue-600 !text-white font-bold">STAGE 04 // ปัจจุบัน (CURRENT)</span>
-              <span class="font-bold text-blue-300">พ.ศ. 2566 – ปัจจุบัน</span>
+              <span class="badge-violet text-[10px] !bg-[#6A2FC8] !text-white font-bold">STAGE 04 // ปัจจุบัน (CURRENT)</span>
+              <span class="font-bold text-[#D1B8FF]">พ.ศ. 2566 – ปัจจุบัน</span>
             </div>
-            <h3 class="text-lg font-bold font-thai text-white truncate">
+            <h3 class="text-lg font-bold font-thai text-[#F2E9FF] truncate">
               วิทยาลัยเทคนิคนครศรีธรรมราช
             </h3>
-            <p class="text-xs sm:text-sm font-thai text-blue-300 font-semibold mt-1">
+            <p class="text-xs sm:text-sm font-thai text-[#D1B8FF] font-semibold mt-1">
               ระดับชั้น: ปวช. 1–3 และ ปวส. 1 (แผนกวิชาเทคโนโลยีสารสนเทศ)
             </p>
-            <div class="mt-2 text-xs font-thai text-slate-300">
+            <div class="mt-2 text-xs font-thai text-[#B3A1D9]">
               เน้นการปฏิบัติจริง พัฒนาระบบ ซอฟต์แวร์จำลอง และผลิตสื่อดิจิทัล
             </div>
           </div>
@@ -579,14 +583,14 @@
   <section id="hobbies" class="relative z-10 py-20 px-4 sm:px-8 max-w-6xl mx-auto">
     
     <div class="text-center max-w-2xl mx-auto mb-14 stagger-in">
-      <div class="midnight-pill-tag mb-3">
-        <i data-lucide="heart" class="w-3.5 h-3.5 text-blue-400"></i>
+      <div class="violet-pill-tag mb-3">
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-[#9D71E8]"></i>
         <span>TIME OFF & PASSION // เวลาว่างของฉัน</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-white">
-        งานอดิเรก <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">& ไลฟ์สไตล์</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-[#F2E9FF]">
+        งานอดิเรก <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] to-[#9D71E8]">& ไลฟ์สไตล์</span>
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-2 font-thai">
+      <p class="text-[#D1B8FF]/80 text-sm sm:text-base mt-2 font-thai">
         กิจกรรมที่ชอบทำยามว่างเพื่อสร้างแรงบันดาลใจและผ่อนคลาย (ลองชี้เมาส์ดู 3D Tilt)
       </p>
     </div>
@@ -597,56 +601,56 @@
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">🏀</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">เล่นบาสเกตบอล</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">Basketball</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">เล่นบาสเกตบอล</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">Basketball</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">⚽</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">ดูบอล</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">Football</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">ดูบอล</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">Football</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">🏀</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">ดูบาสเกตบอล</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">NBA Games</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">ดูบาสเกตบอล</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">NBA Games</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">📷</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">ถ่ายภาพ</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">Photography</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">ถ่ายภาพ</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">Photography</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">📹</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">ถ่ายวิดีโอ</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">Videography</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">ถ่ายวิดีโอ</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">Videography</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in">
         <div class="parallax-content">
           <div class="text-3xl mb-2">🐕</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">เลี้ยงสุนัข</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">Dog Lover</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">เลี้ยงสุนัข</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">Dog Lover</div>
         </div>
       </div>
 
       <div class="craft-card-3d p-4 rounded-2xl text-center stagger-in col-span-2 sm:col-span-1">
         <div class="parallax-content">
           <div class="text-3xl mb-2">🎞️</div>
-          <div class="font-bold font-thai text-xs sm:text-sm text-white">ตัดต่อคลิป</div>
-          <div class="text-[10px] text-blue-300/70 font-mono mt-0.5">Clip Editing</div>
+          <div class="font-bold font-thai text-xs sm:text-sm text-[#F2E9FF]">ตัดต่อคลิป</div>
+          <div class="text-[10px] text-[#D1B8FF]/70 font-mono mt-0.5">Clip Editing</div>
         </div>
       </div>
 
@@ -660,14 +664,14 @@
   <section id="activities" class="relative z-10 py-20 px-4 sm:px-8 max-w-6xl mx-auto">
     
     <div class="text-center max-w-2xl mx-auto mb-14 stagger-in">
-      <div class="midnight-pill-tag mb-3">
-        <i data-lucide="award" class="w-3.5 h-3.5 text-blue-400"></i>
+      <div class="violet-pill-tag mb-3">
+        <i data-lucide="award" class="w-3.5 h-3.5 text-[#9D71E8]"></i>
         <span>STORIES & EXPERIENCES // ประสบการณ์ที่ได้ลงมือทำ</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-white">
-        กิจกรรม & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">เรื่องราวที่ภาคภูมิใจ</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-[#F2E9FF]">
+        กิจกรรม & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] to-[#9D71E8]">เรื่องราวที่ภาคภูมิใจ</span>
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-2 font-thai">
+      <p class="text-[#D1B8FF]/80 text-sm sm:text-base mt-2 font-thai">
         ภาพถ่ายจากประสบการณ์จริง คลิกรูปภาพเพื่อขยายดูขนาดเต็ม (Lightbox)
       </p>
     </div>
@@ -677,31 +681,31 @@
       <!-- Activity 1: การฝึกงาน -->
       <div class="craft-card-3d p-6 sm:p-8 rounded-2xl stagger-in">
         <div class="parallax-content">
-          <div class="flex items-center justify-between pb-4 border-b border-blue-500/20 mb-6">
+          <div class="flex items-center justify-between pb-4 border-b border-[#6A2FC8]/30 mb-6">
             <div class="flex items-center gap-2">
-              <span class="badge-dusk !bg-blue-600 !text-white font-bold">กิจกรรมที่ 1</span>
-              <h3 class="text-xl sm:text-2xl font-bold font-thai text-white">
+              <span class="badge-violet !bg-[#6A2FC8] !text-white font-bold">กิจกรรมที่ 1</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-thai text-[#F2E9FF]">
                 การฝึกงาน (Internship & Practical Work)
               </h3>
             </div>
-            <span class="text-xs font-mono text-blue-300">PRACTICAL SKILLS</span>
+            <span class="text-xs font-mono text-[#D1B8FF]">PRACTICAL SKILLS</span>
           </div>
 
-          <p class="text-xs sm:text-sm font-thai text-slate-300 mb-6 leading-relaxed">
+          <p class="text-xs sm:text-sm font-thai text-[#D1B8FF]/90 mb-6 leading-relaxed">
             หน้าที่และความรับผิดชอบ: จัดเตรียมสถานที่ ดูแลอุปกรณ์เครื่องเสียง จัดทำสื่อประชาสัมพันธ์ด้วยคอมพิวเตอร์ ทดลองใช้งานและจัดเตรียมอุปกรณ์ VR รวมถึงการเรียนรู้การใช้งานเครื่องพิมพ์มืออาชีพ
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="gallery-img-wrapper" data-lightbox-src="img/activities/0e994d42-08b2-4b6e-a2ad-7efe5d16d940.jpg" data-lightbox-caption="การปฏิบัติงานฝึกงาน ดูแลระบบและอุปกรณ์">
               <img src="img/activities/0e994d42-08b2-4b6e-a2ad-7efe5d16d940.jpg" alt="การปฏิบัติงานฝึกงาน" loading="lazy" />
-              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 text-white text-[11px] font-thai border border-blue-500/30">
+              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-[#0B0720]/85 text-white text-[11px] font-thai border border-[#6A2FC8]/40">
                 ดูแลอุปกรณ์ & สถานที่
               </div>
             </div>
 
             <div class="gallery-img-wrapper" data-lightbox-src="img/activities/986a4414-e008-4e16-b487-7a729d3fd6b9.jpg" data-lightbox-caption="จัดเตรียมและทดสอบอุปกรณ์เทคโนโลยีและ VR">
               <img src="img/activities/986a4414-e008-4e16-b487-7a729d3fd6b9.jpg" alt="จัดเตรียมอุปกรณ์" loading="lazy" />
-              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 text-white text-[11px] font-thai border border-blue-500/30">
+              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-[#0B0720]/85 text-white text-[11px] font-thai border border-[#6A2FC8]/40">
                 เตรียมอุปกรณ์ & เทคโนโลยี
               </div>
             </div>
@@ -712,31 +716,31 @@
       <!-- Activity 2: โปรเจคจบ สร้างเกม Building Computer Simulator -->
       <div class="craft-card-3d p-6 sm:p-8 rounded-2xl stagger-in">
         <div class="parallax-content">
-          <div class="flex items-center justify-between pb-4 border-b border-blue-500/20 mb-6">
+          <div class="flex items-center justify-between pb-4 border-b border-[#6A2FC8]/30 mb-6">
             <div class="flex items-center gap-2">
-              <span class="badge-dusk !bg-indigo-600 !text-white font-bold">กิจกรรมที่ 2</span>
-              <h3 class="text-xl sm:text-2xl font-bold font-thai text-white">
+              <span class="badge-violet !bg-[#9D71E8] !text-white font-bold">กิจกรรมที่ 2</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-thai text-[#F2E9FF]">
                 โปรเจคจบ: สร้างเกม Building Computer Simulator
               </h3>
             </div>
-            <span class="text-xs font-mono text-blue-300">ROBLOX STUDIO DEV</span>
+            <span class="text-xs font-mono text-[#D1B8FF]">ROBLOX STUDIO DEV</span>
           </div>
 
-          <p class="text-xs sm:text-sm font-thai text-slate-300 mb-6 leading-relaxed">
+          <p class="text-xs sm:text-sm font-thai text-[#D1B8FF]/90 mb-6 leading-relaxed">
             พัฒนาโปรเจกต์เกมจำลองการประกอบคอมพิวเตอร์เสมือนจริง: ออกแบบหน้าเมนูหลัก ระบบเลือกร้านค้าเพื่อสั่งซื้อเคสและฮาร์ดแวร์ การหยิบ RAM เมนบอร์ด ติดตั้งลงเคส จนกระทั่งคอมพิวเตอร์ประกอบเสร็จสมบูรณ์
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="gallery-img-wrapper" data-lightbox-src="img/activities/RobloxScreenShot20260212_201909783.png" data-lightbox-caption="ประกอบชิ้นส่วนและเมนบอร์ดภายในเคสคอมพิวเตอร์">
               <img src="img/activities/RobloxScreenShot20260212_201909783.png" alt="ประกอบชิ้นส่วนในเคส" loading="lazy" />
-              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 text-white text-[11px] font-thai border border-blue-500/30">
+              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-[#0B0720]/85 text-white text-[11px] font-thai border border-[#6A2FC8]/40">
                 ประกอบชิ้นส่วนลงเคส
               </div>
             </div>
 
             <div class="gallery-img-wrapper" data-lightbox-src="img/activities/RobloxScreenShot20260217_182632253.png" data-lightbox-caption="เครื่องคอมพิวเตอร์หลังประกอบเสร็จสิ้นสมบูรณ์">
               <img src="img/activities/RobloxScreenShot20260217_182632253.png" alt="คอมพิวเตอร์หลังประกอบเสร็จ" loading="lazy" />
-              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 text-white text-[11px] font-thai border border-blue-500/30">
+              <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-[#0B0720]/85 text-white text-[11px] font-thai border border-[#6A2FC8]/40">
                 คอมพิวเตอร์หลังประกอบเสร็จ
               </div>
             </div>
@@ -747,17 +751,17 @@
       <!-- Activity 3: งานกีฬาสี & บาสเกตบอล -->
       <div class="craft-card-3d p-6 sm:p-8 rounded-2xl stagger-in">
         <div class="parallax-content">
-          <div class="flex items-center justify-between pb-4 border-b border-blue-500/20 mb-6">
+          <div class="flex items-center justify-between pb-4 border-b border-[#6A2FC8]/30 mb-6">
             <div class="flex items-center gap-2">
-              <span class="badge-dusk !bg-sky-600 !text-white font-bold">กิจกรรมที่ 3</span>
-              <h3 class="text-xl sm:text-2xl font-bold font-thai text-white">
+              <span class="badge-violet !bg-[#6A2FC8] !text-white font-bold">กิจกรรมที่ 3</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-thai text-[#F2E9FF]">
                 งานกีฬาสี & การแข่งขันบาสเกตบอล
               </h3>
             </div>
-            <span class="text-xs font-mono text-blue-300">SPORTS & TEAMWORK</span>
+            <span class="text-xs font-mono text-[#D1B8FF]">SPORTS & TEAMWORK</span>
           </div>
 
-          <p class="text-xs sm:text-sm font-thai text-slate-300 mb-6 leading-relaxed">
+          <p class="text-xs sm:text-sm font-thai text-[#D1B8FF]/90 mb-6 leading-relaxed">
             ร่วมลงแข่งขันกีฬาบาสเกตบอลกับเพื่อนๆ ในงานกีฬาสี สร้างความสามัคคีในทีม และคว้าถ้วยรางวัลความสำเร็จร่วมกันในสนาม
           </p>
 
@@ -788,46 +792,46 @@
   <!-- =========================================================================
        SECTION 6: CONTACT & FOOTER
        ========================================================================= -->
-  <footer id="contact" class="relative z-10 pt-20 pb-36 sm:pb-40 px-4 sm:px-8 border-t border-blue-500/20 bg-[#070b19]/90">
+  <footer id="contact" class="relative z-10 pt-20 pb-36 sm:pb-40 px-4 sm:px-8 border-t border-[#6A2FC8]/25 bg-[#0B0720]/95">
     <div class="max-w-4xl mx-auto text-center space-y-8 stagger-in">
       
-      <div class="midnight-pill-tag">
-        <i data-lucide="send" class="w-3.5 h-3.5 text-blue-400"></i>
+      <div class="violet-pill-tag">
+        <i data-lucide="send" class="w-3.5 h-3.5 text-[#9D71E8]"></i>
         <span>GET IN TOUCH // ติดต่อพูดคุย</span>
       </div>
 
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-white">
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-thai text-[#F2E9FF]">
         พร้อมพูดคุย & แลกเปลี่ยนเรื่อง <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D1B8FF] to-[#9D71E8]">
           เทคโนโลยีและกราฟิกดีไซน์
         </span>
       </h2>
 
-      <p class="text-slate-300 text-sm sm:text-base max-w-lg mx-auto font-thai">
+      <p class="text-[#D1B8FF]/85 text-sm sm:text-base max-w-lg mx-auto font-thai">
         สามารถติดต่อสอบถาม หรือพูดคุยแลกเปลี่ยนประสบการณ์ผ่านช่องทางด้านล่างนี้ได้เลยครับ
       </p>
 
       <!-- Contact Action Buttons -->
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="tel:0994963974" class="btn-dusk-primary font-thai squash-btn">
+        <a href="tel:0994963974" class="btn-violet-primary font-thai squash-btn whitespace-nowrap">
           <i data-lucide="phone" class="w-4 h-4"></i>
           <span>โทร: 099-4963974</span>
         </a>
-        <button data-copy="jasadakulsakul@gmail.com" data-label="อีเมล" class="btn-dusk-secondary font-thai squash-btn">
-          <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
+        <button data-copy="jasadakulsakul@gmail.com" data-label="อีเมล" class="btn-violet-secondary font-thai squash-btn whitespace-nowrap">
+          <i data-lucide="mail" class="w-4 h-4 text-[#9D71E8]"></i>
           <span>jasadakulsakul@gmail.com</span>
         </button>
       </div>
 
       <!-- Real Social Profiles (Facebook & Instagram) -->
       <div class="flex items-center justify-center gap-4 pt-4">
-        <a href="https://www.facebook.com/elzx.683364?locale=th_TH" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-slate-900 border border-blue-500/30 flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all group" title="Facebook Profile">
+        <a href="https://www.facebook.com/elzx.683364?locale=th_TH" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#25134D] border border-[#6A2FC8]/40 flex items-center justify-center text-[#D1B8FF] hover:text-white hover:border-[#9D71E8] hover:shadow-[0_0_22px_rgba(157,113,232,0.5)] transition-all group" title="Facebook Profile">
           <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
           </svg>
         </a>
 
-        <a href="https://www.instagram.com/elzvxrq?vrfl=MTNldDZkaDlvZ2VpaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-slate-900 border border-blue-500/30 flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all group" title="Instagram Profile">
+        <a href="https://www.instagram.com/elzvxrq?vrfl=MTNldDZkaDlvZ2VpaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#25134D] border border-[#6A2FC8]/40 flex items-center justify-center text-[#D1B8FF] hover:text-white hover:border-[#9D71E8] hover:shadow-[0_0_22px_rgba(157,113,232,0.5)] transition-all group" title="Instagram Profile">
           <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
@@ -835,12 +839,12 @@
       </div>
 
       <!-- Footer Info -->
-      <div class="pt-8 text-xs font-mono text-slate-500 border-t border-blue-500/15 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="pt-8 text-xs font-mono text-[#B3A1D9] border-t border-[#6A2FC8]/25 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div>
           My Profile &bull; Jasada Kuesakul (Bank)
         </div>
-        <div class="flex items-center gap-2 text-blue-400 font-semibold">
-          <span>THEME: DUSK BLUE + MIDNIGHT NAVY</span>
+        <div class="flex items-center gap-2 text-[#9D71E8] font-semibold">
+          <span>THEME: ELECTRIC ULTRAVIOLET</span>
           <span>✧</span>
           <span>HIGH-OCTANE 3D</span>
         </div>
@@ -854,11 +858,11 @@
        ========================================================================= -->
   <div id="photo-lightbox" class="lightbox-overlay">
     <div class="lightbox-box p-4 sm:p-6">
-      <div class="flex items-center justify-between pb-3 mb-3 border-b border-blue-500/20">
-        <span id="lightbox-caption" class="text-sm font-thai font-semibold text-white">
+      <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#6A2FC8]/30">
+        <span id="lightbox-caption" class="text-sm font-thai font-semibold text-[#F2E9FF]">
           ภาพกิจกรรม
         </span>
-        <button id="lightbox-close-btn" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+        <button id="lightbox-close-btn" class="w-8 h-8 rounded-full bg-[#120930] flex items-center justify-center text-[#D1B8FF] hover:text-white transition-colors">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
@@ -872,7 +876,7 @@
        TOAST NOTIFICATION
        ========================================================================= -->
   <div id="toast-notification">
-    <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400"></i>
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9D71E8]"></i>
     <span id="toast-message">คัดลอกข้อมูลแล้ว</span>
   </div>
 

@@ -1,7 +1,7 @@
 /**
  * ============================================================================
- * DUSK BLUE + MIDNIGHT NAVY - HIGH-OCTANE CONTROLLER
- * Visibly Moving Aurora Waves Canvas, Native 3D Tilt Physics, Sound FX, UX
+ * ELECTRIC ULTRAVIOLET + COSMIC MIDNIGHT - HIGH-OCTANE CONTROLLER
+ * Visibly Moving Ultraviolet Aurora Canvas, Native 3D Tilt Physics, Sound FX, UX
  * ============================================================================
  */
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ----------------------------------------------------------------------------
- * 1. DYNAMIC VISIBLY MOVING AURORA CANVAS (Dusk Blue + Midnight Navy Waves)
+ * 1. DYNAMIC VISIBLY MOVING AURORA CANVAS (Electric Ultraviolet Waves)
  * Pure autonomous movement - Zero mouse lag!
  * ---------------------------------------------------------------------------- */
 function initAuroraCanvas() {
@@ -33,16 +33,16 @@ function initAuroraCanvas() {
     height = canvas.height = window.innerHeight;
   });
 
-  // 5 Active Floating Aurora Waves (Visibly Moving!)
+  // 5 Active Floating Aurora Waves in Exact Palette Colors: #0B0720, #25134D, #6A2FC8, #9D71E8, #D1B8FF
   const waves = [
-    { x: width * 0.25, y: height * 0.25, vx: 1.2, vy: 0.9, r: 420, color1: 'rgba(59, 130, 246, 0.38)', color2: 'rgba(30, 58, 138, 0.15)' },
-    { x: width * 0.75, y: height * 0.35, vx: -1.0, vy: 1.1, r: 480, color1: 'rgba(79, 70, 229, 0.32)', color2: 'rgba(15, 23, 42, 0)' },
-    { x: width * 0.5, y: height * 0.8, vx: 1.1, vy: -0.9, r: 450, color1: 'rgba(14, 165, 233, 0.35)', color2: 'rgba(10, 17, 40, 0.1)' },
-    { x: width * 0.85, y: height * 0.85, vx: -0.9, vy: -1.2, r: 380, color1: 'rgba(96, 165, 250, 0.28)', color2: 'rgba(5, 8, 20, 0)' },
-    { x: width * 0.1, y: height * 0.7, vx: 0.8, vy: -0.7, r: 360, color1: 'rgba(37, 99, 235, 0.32)', color2: 'rgba(10, 17, 40, 0)' }
+    { x: width * 0.25, y: height * 0.25, vx: 1.2, vy: 0.9, r: 430, color1: 'rgba(106, 47, 200, 0.42)', color2: 'rgba(37, 19, 77, 0.2)' },
+    { x: width * 0.75, y: height * 0.35, vx: -1.0, vy: 1.1, r: 490, color1: 'rgba(157, 113, 232, 0.38)', color2: 'rgba(11, 7, 32, 0)' },
+    { x: width * 0.5, y: height * 0.8, vx: 1.1, vy: -0.9, r: 460, color1: 'rgba(106, 47, 200, 0.36)', color2: 'rgba(37, 19, 77, 0.15)' },
+    { x: width * 0.85, y: height * 0.85, vx: -0.9, vy: -1.2, r: 400, color1: 'rgba(209, 184, 255, 0.3)', color2: 'rgba(11, 7, 32, 0)' },
+    { x: width * 0.1, y: height * 0.7, vx: 0.8, vy: -0.7, r: 380, color1: 'rgba(157, 113, 232, 0.35)', color2: 'rgba(37, 19, 77, 0)' }
   ];
 
-  // 45 Drifting Cyber Starlight Particles
+  // 45 Drifting Lilac Starlight Particles
   const particles = Array.from({ length: 45 }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
@@ -57,11 +57,11 @@ function initAuroraCanvas() {
   function render() {
     ctx.clearRect(0, 0, width, height);
 
-    // Deep Midnight Navy Background Base
+    // Deep Cosmic Midnight Violet Base (#0B0720 to #1A0D38)
     const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-    bgGrad.addColorStop(0, '#050814');
-    bgGrad.addColorStop(0.5, '#0a1128');
-    bgGrad.addColorStop(1, '#050814');
+    bgGrad.addColorStop(0, '#0B0720');
+    bgGrad.addColorStop(0.5, '#150A33');
+    bgGrad.addColorStop(1, '#0B0720');
     ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, width, height);
 
@@ -82,7 +82,7 @@ function initAuroraCanvas() {
       const grad = ctx.createRadialGradient(w.x, w.y, 0, w.x, w.y, currentRadius);
       grad.addColorStop(0, w.color1);
       grad.addColorStop(0.5, w.color2);
-      grad.addColorStop(1, 'rgba(5, 8, 20, 0)');
+      grad.addColorStop(1, 'rgba(11, 7, 32, 0)');
 
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -90,7 +90,7 @@ function initAuroraCanvas() {
       ctx.fill();
     });
 
-    // Draw and Animate Drifting Particles
+    // Draw and Animate Drifting Lilac Particles
     particles.forEach((p) => {
       p.y += p.vy;
       p.alpha += Math.sin(time * 2) * 0.01;
@@ -99,7 +99,7 @@ function initAuroraCanvas() {
         p.x = Math.random() * width;
       }
 
-      ctx.fillStyle = `rgba(147, 197, 253, ${Math.max(0.15, Math.min(0.9, p.alpha))})`;
+      ctx.fillStyle = `rgba(209, 184, 255, ${Math.max(0.15, Math.min(0.9, p.alpha))})`;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();
@@ -145,7 +145,7 @@ function init3DTilt() {
       const centerX = bounds.width / 2;
       const centerY = bounds.height / 2;
 
-      // 3D rotation angles (Max 12 degrees for noticeable, satisfying depth!)
+      // 3D rotation angles
       const rotateX = ((centerY - topY) / centerY) * 11;
       const rotateY = ((leftX - centerX) / centerX) * 11;
 
@@ -198,24 +198,24 @@ function initSoundSystem() {
 
       if (type === 'hover') {
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(560, now);
-        osc.frequency.exponentialRampToValueAtTime(740, now + 0.04);
+        osc.frequency.setValueAtTime(580, now);
+        osc.frequency.exponentialRampToValueAtTime(780, now + 0.04);
         gain.gain.setValueAtTime(0.015, now);
         gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
         osc.start(now);
         osc.stop(now + 0.04);
       } else if (type === 'click') {
         osc.type = 'triangle';
-        osc.frequency.setValueAtTime(420, now);
-        osc.frequency.exponentialRampToValueAtTime(840, now + 0.07);
+        osc.frequency.setValueAtTime(460, now);
+        osc.frequency.exponentialRampToValueAtTime(920, now + 0.07);
         gain.gain.setValueAtTime(0.05, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
         osc.start(now);
         osc.stop(now + 0.08);
       } else if (type === 'success') {
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(523.25, now);
-        osc.frequency.setValueAtTime(783.99, now + 0.07);
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.07); // A5
         gain.gain.setValueAtTime(0.05, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
         osc.start(now);
@@ -274,7 +274,6 @@ function initScrollStagger() {
     observer.observe(el);
   });
 
-  // Ensure elements already inside initial viewport reveal immediately
   setTimeout(() => {
     elements.forEach((el) => {
       const rect = el.getBoundingClientRect();
@@ -372,18 +371,18 @@ function initMapToggle() {
 
   roadBtn.addEventListener('click', () => {
     iframe.src = baseSrc;
-    roadBtn.classList.add('bg-blue-600', 'text-white');
+    roadBtn.classList.add('bg-[#6A2FC8]', 'text-white');
     roadBtn.classList.remove('bg-transparent', 'text-slate-400');
-    satBtn.classList.remove('bg-blue-600', 'text-white');
+    satBtn.classList.remove('bg-[#6A2FC8]', 'text-white');
     satBtn.classList.add('bg-transparent', 'text-slate-400');
     if (window.playUiSound) window.playUiSound('click');
   });
 
   satBtn.addEventListener('click', () => {
     iframe.src = baseSrc + '&t=k';
-    satBtn.classList.add('bg-blue-600', 'text-white');
+    satBtn.classList.add('bg-[#6A2FC8]', 'text-white');
     satBtn.classList.remove('bg-transparent', 'text-slate-400');
-    roadBtn.classList.remove('bg-blue-600', 'text-white');
+    roadBtn.classList.remove('bg-[#6A2FC8]', 'text-white');
     roadBtn.classList.add('bg-transparent', 'text-slate-400');
     if (window.playUiSound) window.playUiSound('click');
   });
